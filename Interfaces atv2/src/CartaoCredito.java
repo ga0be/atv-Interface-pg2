@@ -25,16 +25,17 @@ public class CartaoCredito extends Pessoa {
     }
 
     @Override
-    public String ToString(){
-        return "Dados do pagador: " + super.ToString() + "\n" + "Dados do cartão: " +  "\n" + "Numerp: " + this.NumeroCartao + "\nData de Vencimento: " + this.DataVencimento + "\nLimite: " + this.Limite + "\n";
+    public String toString(){
+        return "\n" + "Dados do pagador: " + "\n" + super.toString() + "\n" + "Dados do cartão: " +  "\n" + "Numero: " + this.NumeroCartao + "\nData de Vencimento: " + this.DataVencimento + "\nLimite atualizado: " + this.Limite + "\n";
     }
 
+    @Override
     public String processarPagamento() {
 
-      double  NovoLimite = getLimite() - getValorCompra();
-      setLimite(NovoLimite);
+        double  NovoLimite = getLimite() - getValorCompra();
+        setLimite(NovoLimite);
 
-        return "\nCompra realizada com sucesso! " + "\n" + ToString() + "\nLimite novo: " + this.Limite;
+        return "\nCompra realizada com sucesso! " + "\n" + toString();
 
     }
 

@@ -52,7 +52,8 @@ public abstract class Pessoa implements Pagamento {
         this.ValorCompra = ValorCompra;
     }
 
-    public String ToString(){
+    @Override
+    public String toString(){
 
         return "\nNome: " + this.NomeCompleto + "\nEmail: " + this.Email + "\nTelefone: " + this.Telefone + "\nCPF: " + this.cpf + "\nValorCompra: " + this.ValorCompra;
     }

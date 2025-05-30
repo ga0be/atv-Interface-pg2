@@ -19,14 +19,15 @@ public class Boleto extends Pessoa {
 
 
     @Override
-    public String ToString(){
+    public String toString(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return "\nDados comprador: " + super.toString() + "\n Data de Vencimento: " + this.DataVencimento.format(formatter) + "\n Juros: " + this.Juros;
+        return "\nDados comprador: " + super.toString() + "\n Data de Vencimento: " + this.DataVencimento.format(formatter) + "\n Juros: " + + this.Juros + "\n";
     }
 
+    @Override
     public String processarPagamento() {
-      double  ValorNovo = getValorCompra() + getJuros();
-      setValorCompra(ValorNovo);
-        return "\nPagamento realizado com sucesso!" + "\n" + "Extrato: " + ToString();
+        double  ValorNovo = getValorCompra() + getJuros();
+        setValorCompra(ValorNovo);
+        return "\nPagamento realizado com sucesso!" + "\n" + "Extrato: " + toString();
     }
 }

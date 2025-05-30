@@ -12,12 +12,12 @@ public class Checkout {
 
         objetosPagamentos[2] = new Pix("Orlando Silva", "Orlando@hot", "829", "8378", 600, "0290", 2500);
 
-        objetosPagamentos[0].processarPagamento();
 
-        //for ( Pagamento elemento : objetosPagamentos )
-            //{
-             //System.out.printf("\nProcessando Pagamento: \n ", elemento.processarPagamento() );
-            //}
+
+        for ( Pagamento elemento : objetosPagamentos )
+        {
+            System.out.println(elemento.toString() + "\nProcessando Pagamento: \n " + elemento.processarPagamento() );
+        }
 
 
     }

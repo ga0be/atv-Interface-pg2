@@ -19,18 +19,19 @@ public class Pix extends Pessoa{
 
 
     @Override
-    public String ToString(){
+    public String toString(){
 
-        return "\nDados comprador: " + super.toString() + "\nNovo saldo: " + this.Saldo;
+        return "\nDados comprador: " + super.toString() + "\nSaldo na conta Pix atualizado: " + this.Saldo;
 
     }
 
+    @Override
     public String processarPagamento() {
 
-       double NovoSaldo = getSaldo() - getValorCompra();
-       setSaldo(NovoSaldo);
+        double NovoSaldo = getSaldo() - getValorCompra();
+        setSaldo(NovoSaldo);
 
-        return "\nCompra realizada com sucesso! " + "\n" + ToString() + "\nSaldo na conta Pix: " + this.Saldo;
+        return "\nCompra realizada com sucesso! " + "\n" + toString();
     }
 
 
